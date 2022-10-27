@@ -1,0 +1,8 @@
+<com.google.android.material.imageview.ShapeableImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="79dp"
+    android:layout_height="140dp"
+    android:layout_marginHorizontal="2dp"
+    android:scaleType="centerCrop"
+    android:theme="@style/Theme.SferaHW.CornerSize4dp"
+    tools:src="@drawable/add_chronicles" />

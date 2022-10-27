@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SferaHW</string>
+    <string name="share">share</string>
+    <string name="btn_questionnaires">questionnaires</string>
+    <string name="btn_people">people</string>
+    <string name="about_me">About me</string>
+    <string name="dream_and_get">Dream and get</string>
+    <string name="wishes">wishes</string>
+    <string name="moments">Moments</string>
+    <string name="chronicles">Chronicles</string>
+    <string name="choose">Choose</string>
 </resources>

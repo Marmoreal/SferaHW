@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="160dp"
+    android:layout_height="160dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImage"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:theme="@style/Theme.SferaHW.CornerSize50Percent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/add_photo_profile" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/profileRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:background="@drawable/rate_shape"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textAppearance="@style/Theme.SferaHW.Headline5_24"
+        tools:text="4.7" />
+</FrameLayout>

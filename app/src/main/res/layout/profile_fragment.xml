@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/profile_menu"
+            app:navigationIcon="@drawable/ic_navigation"
+            app:titleTextAppearance="@style/Theme.SferaHW.Headline6_18"
+            app:titleTextColor="@color/on_surface"
+            tools:title="ID 123 456 789" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/profileImageAndRatingContent"
+                layout="@layout/profile_image_and_rating_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtProfileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:textAppearance="@style/Theme.SferaHW.Headline6_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileImageAndRatingContent"
+                tools:text="Alice Peterson" />
+
+            <include
+                android:id="@+id/layoutLanguageChoose"
+                layout="@layout/language_choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtProfileName" />
+
+            <include
+                android:id="@+id/layoutLocationChoose"
+                layout="@layout/location_choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutLanguageChoose" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listProfilePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="8dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutLocationChoose"
+                app:spanCount="4"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_list_profile_photo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnQuestionnaires"
+                style="@style/Theme.SferaHW.OutlinedButtonSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/btn_questionnaires"
+                app:layout_constraintEnd_toStartOf="@id/btnPeople"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listProfilePhoto" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPeople"
+                style="@style/Theme.SferaHW.OutlinedButtonSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/btn_people"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnQuestionnaires"
+                app:layout_constraintTop_toBottomOf="@+id/listProfilePhoto" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutAboutMe"
+                style="@style/Theme.SferaHW.TextInputLayoutFilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="2dp"
+                android:hint="@string/about_me"
+                app:counterEnabled="true"
+                app:counterMaxLength="300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnQuestionnaires">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtAboutMe"
+                    style="@style/Theme.SferaHW.TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="4dp"
+                    tools:text="Жизнь будет гораздо проще и приятнее для каждого человека, если мы будем" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDreamAndGet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/dream_and_get"
+                android:textAppearance="@style/Theme.SferaHW.Subtitle1_16"
+                app:layout_constraintEnd_toStartOf="@id/switchDreamAndGet"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutAboutMe" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchDreamAndGet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:theme="@style/Theme.SferaHW.Switch"
+                app:layout_constraintBottom_toBottomOf="@+id/txtDreamAndGet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtDreamAndGet"
+                app:layout_constraintTop_toTopOf="@+id/txtDreamAndGet"
+                tools:checked="true" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWishes"
+                style="@style/Theme.SferaHW.OutlinedButtonLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:text="@string/wishes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDreamAndGet" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtMoments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/moments"
+                android:textAppearance="@style/Theme.SferaHW.Subtitle2_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnWishes" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listMoments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtMoments"
+                tools:listitem="@layout/item_list_moments" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtChronicles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/chronicles"
+                android:textAppearance="@style/Theme.SferaHW.Subtitle2_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listMoments" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listChronicles"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="8dp"
+                android:clipToPadding="false"
+                android:paddingBottom="30dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtChronicles"
+                app:spanCount="3"
+                tools:itemCount="9"
+                tools:listitem="@layout/item_list_chronicles" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
