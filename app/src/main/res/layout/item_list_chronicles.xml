@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/chronicles"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="2dp"
@@ -16,5 +17,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/add_chronicles" />
+        tools:src="@drawable/add_moments_and_chronicles" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -80,6 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="14dp"
                 android:layout_marginTop="8dp"
+                android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +138,7 @@
                     tools:text="Жизнь будет гораздо проще и приятнее для каждого человека, если мы будем" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txtDreamAndGet"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -173,7 +174,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtDreamAndGet" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txtMoments"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -192,6 +193,7 @@
                 android:layout_marginTop="10dp"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
+                android:overScrollMode="never"
                 android:paddingHorizontal="14dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -199,7 +201,7 @@
                 app:layout_constraintTop_toBottomOf="@id/txtMoments"
                 tools:listitem="@layout/item_list_moments" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txtChronicles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -218,6 +220,7 @@
                 android:layout_marginHorizontal="14dp"
                 android:layout_marginTop="8dp"
                 android:clipToPadding="false"
+                android:overScrollMode="never"
                 android:paddingBottom="30dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"

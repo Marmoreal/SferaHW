@@ -1,7 +1,8 @@
-package com.example.sferahw
+package com.example.sferahw.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.sferahw.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
