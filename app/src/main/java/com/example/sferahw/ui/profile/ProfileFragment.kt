@@ -32,7 +32,7 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.profileImageAndRatingContent.profileImage.load(drawableResId = R.drawable.add_photo_profile)
+        binding.profileImageAndRatingContent.profileImage.load(R.drawable.add_photo_profile)
         binding.layoutLanguageChoose.txtLanguage.text = getString(R.string.not_specified)
         binding.layoutLocationChoose.txtLocation.text = getString(R.string.not_specified)
 
