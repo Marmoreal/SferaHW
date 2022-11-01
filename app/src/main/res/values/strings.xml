@@ -10,4 +10,8 @@
     <string name="chronicles">Chronicles</string>
     <string name="choose">Choose</string>
     <string name="not_specified">Not specified</string>
+    <string name="search">search</string>
+    <string name="people">People</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="unsubscribe">Unsubscribe</string>
 </resources>

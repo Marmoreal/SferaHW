@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
+import com.bumptech.glide.Glide
 import com.example.sferahw.databinding.ItemListProfilePhotoBinding
 import com.example.sferahw.domain.model.Image
 
@@ -27,7 +27,7 @@ class PhotoListAdapter : ListAdapter<Image, PhotoListAdapter.PhotoViewHolder>(Ph
         private val binding: ItemListProfilePhotoBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Image) {
-            binding.photo.load(item.url)
+            Glide.with(binding.root.context).load(item.url).into(binding.photo)
         }
     }
 

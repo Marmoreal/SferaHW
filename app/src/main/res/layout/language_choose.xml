@@ -14,18 +14,19 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txtLanguage"
-        style="Theme.SferaHW.Body2_14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:layout_weight="100"
+        android:textAppearance="@style/Theme.SferaHW.Body2_14"
         tools:text="Russian, English, German" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnChoose"
         style="@style/Theme.SferaHW.TextButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
+        android:gravity="center|end"
         android:text="@string/choose" />
 </androidx.appcompat.widget.LinearLayoutCompat>

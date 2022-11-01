@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
+import com.bumptech.glide.Glide
 import com.example.sferahw.databinding.ItemListChroniclesBinding
 import com.example.sferahw.domain.model.Image
 
-class ChroniclesListAdapter : ListAdapter<Image, ChroniclesListAdapter.ChroniclesViewHolder>(PhotoItemCallback) {
+class ChroniclesListAdapter :
+    ListAdapter<Image, ChroniclesListAdapter.ChroniclesViewHolder>(ChroniclesItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChroniclesViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -27,11 +28,11 @@ class ChroniclesListAdapter : ListAdapter<Image, ChroniclesListAdapter.Chronicle
         private val binding: ItemListChroniclesBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Image) {
-            binding.chronicles.load(item.url)
+            Glide.with(binding.root.context).load(item.url).into(binding.chronicles)
         }
     }
 
-    private object PhotoItemCallback : DiffUtil.ItemCallback<Image>() {
+    private object ChroniclesItemCallback : DiffUtil.ItemCallback<Image>() {
         override fun areItemsTheSame(oldItem: Image, newItem: Image): Boolean {
             return oldItem.id == newItem.id
         }

@@ -17,7 +17,7 @@
             app:menu="@menu/profile_menu"
             app:navigationIcon="@drawable/ic_navigation"
             app:titleTextAppearance="@style/Theme.SferaHW.Headline6_18"
-            app:titleTextColor="@color/on_surface"
+            app:titleTextColor="@color/on_surface87"
             tools:title="ID 123 456 789" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -120,7 +120,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="2dp"
                 android:hint="@string/about_me"
                 app:counterEnabled="true"
                 app:counterMaxLength="300"
@@ -133,6 +132,8 @@
                     style="@style/Theme.SferaHW.TextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:maxLength="300"
                     android:paddingStart="0dp"
                     android:paddingEnd="4dp"
                     tools:text="Жизнь будет гораздо проще и приятнее для каждого человека, если мы будем" />
@@ -143,7 +144,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="18dp"
                 android:text="@string/dream_and_get"
                 android:textAppearance="@style/Theme.SferaHW.Subtitle1_16"
                 app:layout_constraintEnd_toStartOf="@id/switchDreamAndGet"
@@ -166,7 +167,7 @@
                 android:id="@+id/btnWishes"
                 style="@style/Theme.SferaHW.OutlinedButtonLarge"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="6dp"
                 android:text="@string/wishes"

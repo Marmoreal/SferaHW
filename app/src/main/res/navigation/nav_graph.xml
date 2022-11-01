@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.sferahw.ui.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_peopleFragment"
+            app:destination="@id/peopleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/peopleFragment"
+        android:name="com.example.sferahw.ui.people.PeopleFragment"
+        android:label="PeopleFragment" />
 </navigation>

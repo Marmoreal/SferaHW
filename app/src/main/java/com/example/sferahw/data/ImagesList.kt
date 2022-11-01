@@ -3,10 +3,10 @@ package com.example.sferahw.data
 import com.example.sferahw.domain.model.Image
 
 object ImagesList {
-
-    fun getChroniclesList() = list
+    fun getImagesList() = list
 
     private val list = listOf(
+
         Image(
             0,
             "https://chpic.su/_data/stickers/m/MemesByKubikRubik001/MemesByKubikRubik001_024.webp"
