@@ -5,12 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.example.sferahw.databinding.ItemListMomentsBinding
 import com.example.sferahw.domain.model.Image
+import javax.inject.Inject
 
-class MomentsListAdapter :
-    ListAdapter<Image, MomentsListAdapter.MomentsViewHolder>(MomentsItemCallback) {
+class MomentsListAdapter @Inject constructor(
+    private val glide: RequestManager
+): ListAdapter<Image, MomentsListAdapter.MomentsViewHolder>(MomentsItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MomentsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -28,7 +30,7 @@ class MomentsListAdapter :
         private val binding: ItemListMomentsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Image) {
-            Glide.with(binding.root.context).load(item.url).into(binding.moment)
+            glide.load(item.url).into(binding.moment)
         }
     }
 

@@ -6,13 +6,14 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.example.sferahw.R
 import com.example.sferahw.databinding.ItemListSubscriptionsBinding
 import com.example.sferahw.domain.model.User
 import javax.inject.Inject
 
 class PeopleListAdapter @Inject constructor(
+    private val glide: RequestManager
 ) : ListAdapter<User, PeopleListAdapter.PeopleViewHolder>(PeopleItemCallback) {
 
     private var onItemClick: ((Int) -> Unit)? = null
@@ -38,7 +39,7 @@ class PeopleListAdapter @Inject constructor(
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: User) {
             with(binding) {
-                Glide.with(root.context).load(item.url).into(image)
+                glide.load(item.url).into(image)
                 txtName.text = item.name
                 btnSubscribe.setOnClickListener {
                     onItemClick?.invoke(item.id)

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.example.sferahw.data.PeopleList
 import com.example.sferahw.databinding.PeopleFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,9 +16,14 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class PeopleFragment : Fragment() {
 
+    @Inject
+    lateinit var glide: RequestManager
+
+    @Inject
+    lateinit var peopleAdapter: PeopleListAdapter
+
     private lateinit var binding: PeopleFragmentBinding
     private val viewModel: PeopleViewModel by viewModels()
-    private val peopleAdapter = PeopleListAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,

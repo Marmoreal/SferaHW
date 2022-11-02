@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColorStateList
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.example.sferahw.R
 import com.example.sferahw.data.ImagesList
 import com.example.sferahw.databinding.ProfileFragmentBinding
@@ -21,10 +21,19 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
+    @Inject
+    lateinit var glide: RequestManager
+
+    @Inject
+    lateinit var photoAdapter: PhotoListAdapter
+
+    @Inject
+    lateinit var momentsAdapter: MomentsListAdapter
+
+    @Inject
+    lateinit var chroniclesAdapter: ChroniclesListAdapter
+
     private lateinit var binding: ProfileFragmentBinding
-    private val photoAdapter = PhotoListAdapter()
-    private val momentsAdapter = MomentsListAdapter()
-    private val chroniclesAdapter = ChroniclesListAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,9 +49,7 @@ class ProfileFragment : Fragment() {
 
         with(binding) {
 
-            Glide.with(requireContext())
-                .load(R.drawable.add_photo_profile)
-                .into(profileImageAndRatingContent.profileImage)
+            glide.load(R.drawable.add_photo_profile).into(profileImageAndRatingContent.profileImage)
 
             layoutLanguageChoose.txtLanguage.text = getString(R.string.not_specified)
             layoutLocationChoose.txtLocation.text = getString(R.string.not_specified)
